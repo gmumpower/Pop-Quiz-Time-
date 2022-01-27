@@ -1,0 +1,50 @@
+* {
+    font-size: 125%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: lightsteelblue;
+}
+
+.head-title {
+    padding: 10px;
+}
+
+.high-score-button {
+    padding: 10px;
+    border:none;
+    background-color: transparent;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+
+p {
+    font-size: 65%;
+    text-align: center;
+    font-weight: 100;
+}
+
+main {
+    text-align: center;
+}
+
+.start-btn {
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+.time {
+    float: right;
+    color:red;
+    border: none;
+};
