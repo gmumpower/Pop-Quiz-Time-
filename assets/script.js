@@ -1,6 +1,6 @@
 var time = document.querySelector(".timer");
 var score = document.querySelector("#score");
-var secondsLeft = 60;
+var secondsLeft = 50;
 
 const start = document.querySelector("#start");
 
@@ -61,20 +61,6 @@ const questions = [
     }
 ];
 
-function setTime() {
-    let timerInterval = setInterval(function () {
-        secondsLeft--;
-        time.textContent = `Time:${secondsLeft}s`;
-
-        if (secondsLeft === 0 || questionCount === questions.length) {
-            clearInterval(timerInterval);
-            questionsEl.style.display = "none";
-            finalEl.style.display = "block";
-            score.textContent = secondsLeft;
-        }
-    }, 1000);
-}
-
 function startQuiz() {
     codersIntro.style.display = "none";
     questionsEl.style.display = "block";
@@ -118,85 +104,3 @@ function checkAnswer(event) {
     }
     setQuestion(questionCount);
 }
-
-function addScore(event) {
-    event.preventDefault();
-
-    finalEl.style.display = "none";
-    highscoresEl.style.display = "block";
-
-    let init = initialsInput.value.toUpperCase();
-    scoreList.push({ initials: init, score: secondsLeft });
-
-    scoreList = scoreList.sort((a, b) => {
-        if (a.score < b.score) {
-          return 1;
-        } else {
-          return -1;
-        }
-      });
-    
-    scoreListEl.innerHTML="";
-    for (let i = 0; i < scoreList.length; i++) {
-        let li = document.createElement("li");
-        li.textContent = `${scoreList[i].initials}: ${scoreList[i].score}`;
-        scoreListEl.append(li);
-    }
-
-    storeScores();
-    displayScores();
-}
-
-function storeScores() {
-    localStorage.setItem("scoreList", JSON.stringify(scoreList));
-}
-
-function displayScores() {
-
-    let storedScoreList = JSON.parse(localStorage.getItem("scoreList"));
-
-
-    if (storedScoreList !== null) {
-        scoreList = storedScoreList;
-    }
-}
-
-
-function clearScores() {
-    localStorage.clear();
-    scoreListEl.innerHTML="";
-}
-
-start.addEventListener("click", startQuiz);
-
-
-ansBtn.forEach(item => {
-    item.addEventListener('click', checkAnswer);
-});
-
-
-submitScrBtn.addEventListener("click", addScore);
-
-
-goBackBtn.addEventListener("click", function () {
-    highscoresEl.style.display = "none";
-    codersIntro.style.display = "block";
-    secondsLeft = 75;
-    time.textContent = `Time:${secondsLeft}s`;
-});
-
-
-clearScrBtn.addEventListener("click", clearScores);
-
-viewScrBtn.addEventListener("click", function () {
-    if (highscoresEl.style.display === "none") {
-        highscoresEl.style.display = "block";
-    } 
-    else if (highscoresEl.style.display === "block") {
-        highscoresEl.style.display = "none";
-    } 
-    
-    else {
-        return alert("Take Quiz. Be the highest score.");
-    }
-});

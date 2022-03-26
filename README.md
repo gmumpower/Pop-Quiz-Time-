@@ -1,1 +1,1 @@
-# Pop-Quiz-Time-This was a challenge in getting the pages to work with one another and continuing onto the next question. Through some help, i got the main parts of it down, though will be pushing to edit and creating an even better one.
+This was a challenge in getting the pages to work with one another and continuing onto the next question. Through some help, i got the main parts of it down, though will be pushing to edit and creating an even better one.
