@@ -24,7 +24,3 @@ Concepts Used
     -Utilizing Local Storage
     -Event Listeners
     
-![Screenshot (85)](https://user-images.githubusercontent.com/60993926/160295676-9276276a-5f04-4ba8-8135-b294dcd411a8.png)
-![Screenshot (86)](https://user-images.githubusercontent.com/60993926/160295679-12a3b58b-a54d-4ebe-86f5-cee7e9457928.png)
-![Screenshot (87)](https://user-images.githubusercontent.com/60993926/160295680-078ef20d-2974-4dc2-93de-4f0a16395f8e.png)
-![Screenshot (88)](https://user-images.githubusercontent.com/60993926/160295682-0507fa29-fd09-47de-ba19-775389eec481.png)
